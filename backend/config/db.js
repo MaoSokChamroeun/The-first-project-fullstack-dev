@@ -10,4 +10,3 @@ const connectionDB = async(req , res) => {
 }
 
 module.exports = connectionDB;
-

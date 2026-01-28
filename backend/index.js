@@ -7,7 +7,6 @@ const rateLimit = require('express-rate-limit')
 const helmet  = require('helmet')
 const path = require('path')
 const logger = require('./logger');
-// 1. Config environment variables FIRST
 dotenv.config({ path: './config.env' });
 const app = express();
 const limiter = rateLimit({
@@ -33,7 +32,7 @@ app.use(limiter)
 //     credentials: true,               // Allows cookies to be sent
 // }));
 app.use(cors({
-  origin: true,
+  origin: process.env.CLIENT_URL,
   credentials: true,
 }));
 
